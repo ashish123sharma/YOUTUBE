@@ -1,0 +1,47 @@
+
+#show_videos{
+display:grid;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(1,450px);
+padding: 2px;
+
+} 
+
+#each_video{
+    height: 450px;
+    /* width:450px; */
+    background-color: rgb(30, 28, 28);
+    color: white;
+    padding:4px
+
+}
+#playbutton:hover{
+    height:310px;
+    width:280px
+}
+img{
+    height:150px;
+    width:180px;
+    margin-top: -30px;
+    /* margin: auto; */
+}
+#navbar{
+    display: flex;
+    /* border: 1px solid green; */
+    height:70px;
+
+}
+#text_btn{
+    margin-top: 30px;
+    margin-left: 50px;
+
+}
+#query{
+    width:250px;
+    height: 30px;
+}
+button{
+    height: 35px;
+    width:70px;
+}
+
