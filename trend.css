@@ -1,0 +1,9 @@
+#screen{
+height:400px;
+width:300px;
+}
+#show_videos{
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,300px);
+    gap:25px
+}

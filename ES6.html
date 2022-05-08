@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="ES6.css">
+<link rel="stylesheet" href="trend.css">
 <body>
 
     <div id="navbar">
-  <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-0.png" alt="">
+   <a href="ES6.html"><img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-0.png" alt=""></a> 
 
   <div id="text_btn">
   <input type="text" id="query">
@@ -29,106 +30,8 @@
 
 
 
-<script>
-//    url= https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=Maxpane&key=AIzaSyBWXzlMWSc01CWYgm06PEZA6cXOIBsFLZE
-
-// fetch()
-// const api = "AIzaSyBWXzlMWSc01CWYgm06PEZA6cXOIBsFLZE"
-
-
-const searchVideos = async()=>{
-    try{
-        const q = document.getElementById("query").value;
-
-        const res = await fetch(
-            `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${q}%202&key=AIzaSyBWXzlMWSc01CWYgm06PEZA6cXOIBsFLZE`
-        )
-            const data = await res.json();
-        // console.log(data)   
-        append(data.items);
-    }
+<script src="video.js"></script>
+<script src="trending.js"></script>
     
-  
-    // it is in form of array of objects so we can use forEach to itrate in  array of object 
-        catch(err){
-        console.log(err);
-    }
-}
-
-const append = (videos) =>{
-    document.getElementById("navbar").style.backgroundColor="grey"
-    let show_videos=document.getElementById("show_videos");
-    show_videos.innerHTML = null;
-     videos.forEach(({id :{videoId} , snippet:{title} })=>{
-
-        let div = document.createElement('div');
-        div.id="each_video"
-     
-
-         let iframe = document.createElement('iframe');
-         iframe.id="playbutton"
-         iframe.src=`https://www.youtube.com/embed/${videoId}`
-          iframe.width="90%";
-          iframe.height="70%";
-        //   iframe.allow="fullscreen";
-        iframe.allowFullscreen
-          iframe.allow="accelerometer"
-          let name = document.createElement('h5');
-          name.innerText= title;
-          div.append(iframe,name);
-
-                // let data ={
-                //     title,
-                //     videoId,
-                // }   
 
 
-                //   div.onclick= showVideos(data);
-
-          show_videos.append(div);
-        });
-
-}
-// const showVideos =(x)=>{
-//     // event.preventDefault();
-//     window.location.href="ES6.html"
-//     localStorage.setItem("vedios",JSON.stringify(x));
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const append = (vedios)=>{
-    let show_vedios = getElementById("showVedios");
-     
-    show_vedios.innerHTML= null;
-
-    vedios.forEach(({id:{vedioId},snippet:{title}})=>{
-           let div = document.createElement('div');
-        let iframe=document.createElement('iframe');
-        iframe.src= `https://www.youtube.com/embed/${vedios}`
-        iframe.width="90%"
-        iframe.height="100%";
-        iframe.allow="fullscreen";
-               let name = document.createElement("h4");
-                name.innerText= title;
-                div.append (iframe,name);
-show_vedios.append(div)
-    })
-}*/
-
-
-
-</script>
