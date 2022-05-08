@@ -49,8 +49,8 @@ let read=(id)=>{
           iframe.src=`https://www.youtube.com/embed/${videoId}`
            iframe.width="90%";
            iframe.height="70%";
-         //   iframe.allow="fullscreen";
-         iframe.allowFullscreen
+           iframe.allow="fullscreen";
+        //  iframe.allowFullscreen
            iframe.allow="accelerometer"
            let name = creat('h5');
            name.innerText= title;
